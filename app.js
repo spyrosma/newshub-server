@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 app.get('/city',(req,res) => {
   let city = req.query.city;
-  let fullUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+city+'&appid='+process.env.REACT_APP_WEATHER_API_KEY;
+  let fullUrl = 'https://thingproxy.freeboard.io/fetch/http://api.openweathermap.org/geo/1.0/direct?q='+city+'&appid='+process.env.REACT_APP_WEATHER_API_KEY;
 
   axios.get(fullUrl)
     .then(response => {
