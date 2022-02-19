@@ -27,7 +27,7 @@ app.get('/weather', (req, res) => {
 });
 
 app.get('/news', (req,res) => {
-  const url='https://newsapi.org/v2/top-headlines?';
+  const url='https://thingproxy.freeboard.io/fetch/https://newsapi.org/v2/top-headlines?';
     const country='country=';
     const category='&category=';
     const searchPre = 'q=';
