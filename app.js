@@ -12,6 +12,20 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('go to /weather to see weather')
 });
+app.get('/city',(req,res) => {
+  let city = req.query.city;
+  let fullUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+city+'&appid='+process.env.REACT_APP_WEATHER_API_KEY;
+
+  axios.get(fullUrl)
+    .then(response => {
+      res.json(response.data);
+      
+    })
+    .catch(error => {
+      console.log(api);
+    });
+
+})
 app.get('/weather', (req, res) => {
     let lat = req.query.lat;
     let lon = req.query.lon;
